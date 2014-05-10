@@ -15,5 +15,6 @@ namespace Domain
         [Required]
         public string Name { get; set; }
         public string NickName { get; set; }
+        public DateTime DateOfBirth { get; set; }
     }
 }

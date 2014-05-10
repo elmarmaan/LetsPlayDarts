@@ -10,7 +10,8 @@ namespace Contexts.Migrations
         public Configuration()
         {
             AutomaticMigrationsEnabled = true;
-            AutomaticMigrationDataLossAllowed = false;
+            AutomaticMigrationDataLossAllowed = true;
+            //Database.SetInitializer(new DropCreateDatabaseAlways<LetsPlayDartsContext>());
 
             ContextKey = "LetsPlayDartsContext";
         }

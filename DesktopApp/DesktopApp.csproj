@@ -155,9 +155,19 @@
       <Project>{19F3B3DC-52CB-491A-B4D7-B3ACBD4A27EC}</Project>
       <Name>Domain</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Services\Services.csproj">
+      <Project>{45720336-2BA1-42F8-834E-67D5AE550099}</Project>
+      <Name>Services</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\SignUp\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\SignUp\AddAccount.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\SignUp\GetAccounts.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

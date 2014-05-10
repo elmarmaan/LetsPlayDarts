@@ -34,5 +34,22 @@ namespace Services
             var accounts = _accountRepository.GetAccounts();
             return accounts.ToList();
         }
+
+
+        public Account GetAccount(long accountId)
+        {
+            var account = _accountRepository.GetAccount(accountId);
+            return account;
+        }
+        
+        public void EditAccount(Account account)
+        {
+            _accountRepository.UpdateAccount(account, account.Id);
+        }
+        
+        public void DeleteAccount(long accountId)
+        {
+            _accountRepository.DeleteAccount(accountId);
+        }
     }
 }

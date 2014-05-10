@@ -1,11 +1,11 @@
 ﻿@model Domain.Account
 
 @{
-    ViewBag.Title = "AddAccount";
+    ViewBag.Title = "EditAccount";
     Layout = "~/Views/_Layout.cshtml";
 }
 
-<h2>AddAccount</h2>
+<h2>EditAccount</h2>
 
 @using (Html.BeginForm()) {
     @Html.AntiForgeryToken()
@@ -13,14 +13,8 @@
 
     <fieldset>
         <legend>Account</legend>
-        
-        <div class="editor-label">
-            @Html.LabelFor(model => model.Name)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.Name)
-            @Html.ValidationMessageFor(model => model.Name)
-        </div>
+
+        @Html.HiddenFor(model => model.Id)
 
         <div class="editor-label">
             @Html.LabelFor(model => model.EmailAddress)
@@ -38,8 +32,16 @@
             @Html.ValidationMessageFor(model => model.Password)
         </div>
 
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Name)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Name)
+            @Html.ValidationMessageFor(model => model.Name)
+        </div>
+
         <p>
-            <input type="submit" value="Create" />
+            <input type="submit" value="Save" />
         </p>
     </fieldset>
 }

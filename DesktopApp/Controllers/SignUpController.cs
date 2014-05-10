@@ -42,13 +42,41 @@ namespace DesktopApp.Controllers
             {
                 _accountService.AddAccount(account);
             }
-            return View();
+            return RedirectToAction("GetAccounts");
         }
 
         public ActionResult GetAccounts()
         {
             var accounts = _accountService.GetAccounts();
             ViewData.Model = accounts;
+            return View();
+        }
+
+        [HttpGet]
+        public ActionResult EditAccount(long accountId)
+        {
+            var account = _accountService.GetAccount(accountId);
+            ViewData.Model = account;
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult EditAccount(Account account)
+        {
+            _accountService.EditAccount(account);
+            return RedirectToAction("GetAccounts");
+        }
+
+        public ActionResult DeleteAccount(long accountId)
+        {
+            _accountService.DeleteAccount(accountId);
+            return RedirectToAction("GetAccounts");
+        }
+
+        public ActionResult GetAccount(long accountId)
+        {
+            var account = _accountService.GetAccount(accountId);
+            ViewData.Model = account;
             return View();
         }
     }

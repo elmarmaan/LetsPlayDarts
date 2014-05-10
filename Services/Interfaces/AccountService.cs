@@ -11,5 +11,8 @@ namespace Services.Interfaces
     {
         void AddAccount(Account account);
         List<Account> GetAccounts();
+        Account GetAccount(long accountId);
+        void EditAccount(Account account);
+        void DeleteAccount(long accountId);
     }
 }

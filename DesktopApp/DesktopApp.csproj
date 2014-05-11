@@ -180,10 +180,6 @@
       <Project>{DC93CC5A-8EEA-4945-B814-FEDBC97A73D8}</Project>
       <Name>Contexts</Name>
     </ProjectReference>
-    <ProjectReference Include="..\DesktopApp.Model\DesktopApp.Model.csproj">
-      <Project>{64ED6786-E1DE-442A-8822-7C2F2ED5773D}</Project>
-      <Name>DesktopApp.Model</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Domain\Domain.csproj">
       <Project>{19F3B3DC-52CB-491A-B4D7-B3ACBD4A27EC}</Project>
       <Name>Domain</Name>

@@ -122,6 +122,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\SignUpController.cs" />
     <Compile Include="Global.asax.cs">
@@ -144,8 +145,8 @@
       <SubType>Designer</SubType>
     </Content>
     <Content Include="Views\Web.config" />
-    <Content Include="Views\SignUp\EditAccount.cshtml" />
-    <Content Include="Views\SignUp\GetAccount.cshtml" />
+    <Content Include="Views\Account\EditAccount.cshtml" />
+    <Content Include="Views\Account\GetAccount.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\SignUp\LogOn.cshtml" />
     <None Include="_bin_deployableAssemblies\x86\sqlcese40.dll" />
@@ -195,13 +196,13 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\SignUp\Index.cshtml" />
+    <Content Include="Views\Account\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\SignUp\AddAccount.cshtml" />
+    <Content Include="Views\Account\AddAccount.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\SignUp\GetAccounts.cshtml" />
+    <Content Include="Views\Account\GetAccounts.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <None Include="_bin_deployableAssemblies\amd64\Microsoft.VC90.CRT\Microsoft.VC90.CRT.manifest" />

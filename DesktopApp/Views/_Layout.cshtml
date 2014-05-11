@@ -20,10 +20,20 @@
                     </button>
                     <a class="navbar-brand" href="#">Let's play darts!</a>
                 </div>
-                <ul class="nav nav-pills pull-right">
-                    <li><a href="/Account/LogOn">Login</a></li>
-                    <li><a href="#">Sign Up</a></li>
-                </ul>
+                @if (!System.Web.HttpContext.Current.User.Identity.IsAuthenticated)
+                {
+                    <ul class="nav nav-pills pull-right">
+                        <li><a href="/SignUp/LogOn">Login</a></li>
+                        <li><a href="/Account/AddAccount">Sign Up</a></li>
+                    </ul>
+                }
+                else
+                {
+                    <ul class="nav nav-pills pull-right">
+                        <li><a href="/SignUp/SignOut">Sign out</a></li>
+                    </ul>
+                }
+               
             </div>
         </div>
         <div class="container content">

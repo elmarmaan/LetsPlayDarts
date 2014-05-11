@@ -51,5 +51,18 @@ namespace Services
         {
             _accountRepository.DeleteAccount(accountId);
         }
+
+        public bool LogOn(string emailAddress, string password)
+        {
+            var account = _accountRepository.GetAccountByEmailAddress(emailAddress);
+            if (account != null)
+            {
+                if (account.Password == password)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
     }
 }

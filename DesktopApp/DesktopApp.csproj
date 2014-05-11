@@ -122,6 +122,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\SignUpController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -144,6 +145,8 @@
     <Content Include="Views\Web.config" />
     <Content Include="Views\SignUp\EditAccount.cshtml" />
     <Content Include="Views\SignUp\GetAccount.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\SignUp\LogOn.cshtml" />
     <None Include="_bin_deployableAssemblies\x86\sqlcese40.dll" />
     <None Include="_bin_deployableAssemblies\x86\sqlceqp40.dll" />
     <None Include="_bin_deployableAssemblies\x86\sqlceme40.dll" />
@@ -176,6 +179,10 @@
     <ProjectReference Include="..\Contexts\Contexts.csproj">
       <Project>{DC93CC5A-8EEA-4945-B814-FEDBC97A73D8}</Project>
       <Name>Contexts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DesktopApp.Model\DesktopApp.Model.csproj">
+      <Project>{64ED6786-E1DE-442A-8822-7C2F2ED5773D}</Project>
+      <Name>DesktopApp.Model</Name>
     </ProjectReference>
     <ProjectReference Include="..\Domain\Domain.csproj">
       <Project>{19F3B3DC-52CB-491A-B4D7-B3ACBD4A27EC}</Project>

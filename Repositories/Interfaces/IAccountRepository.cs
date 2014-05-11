@@ -15,5 +15,6 @@ namespace Repositories.Interfaces
         IList<Account> GetAccounts();
         void UpdateAccount(Account account, long accountId);
         void AddPlayerToAccount(long accountId, Player player);
+        Account GetAccountByEmailAddress(string emailAddress);
     }
 }

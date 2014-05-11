@@ -67,5 +67,11 @@ namespace Repositories
             account.Players.Add(player);
             _context.SaveChanges();
         }
+
+        public Account GetAccountByEmailAddress(string emailAddress)
+        {
+            var account = _context.Accounts.SingleOrDefault(a => a.EmailAddress == emailAddress);
+            return account;
+        }
     }
 }

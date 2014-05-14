@@ -42,7 +42,7 @@ namespace Repositories
             return account;
         }
 
-        public IList<Account> GetAccounts()
+        public IEnumerable<Account> GetAccounts()
         {
             return _context.Accounts.ToList();
         }
@@ -55,16 +55,6 @@ namespace Repositories
             oldAccount.EmailAddress = account.EmailAddress;
             oldAccount.Name = account.Name;
             oldAccount.Password = account.Password;
-            _context.SaveChanges();
-        }
-
-
-        public void AddPlayerToAccount(long accountId, Player player)
-        {
-            var account = _context.Accounts.SingleOrDefault(a => a.Id == accountId);
-            if(account == null) throw new InvalidDataException("account");
-
-            account.Players.Add(player);
             _context.SaveChanges();
         }
 

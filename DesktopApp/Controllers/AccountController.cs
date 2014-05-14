@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using DesktopApp.Attributes;
 using Domain;
 using Services;
 using Services.Interfaces;
@@ -24,12 +25,14 @@ namespace DesktopApp.Controllers
         }
 
         [HttpGet]
+        [IsAdmin]
         public ActionResult AddAccount()
         {
             return View();
         }
 
         [HttpPost]
+        [IsAdmin]
         public ActionResult AddAccount(Account account)
         {
             if (ViewData.ModelState.IsValid)

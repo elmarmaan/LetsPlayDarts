@@ -14,6 +14,7 @@ namespace Services.Interfaces
         Account GetAccount(long accountId);
         void EditAccount(Account account);
         void DeleteAccount(long accountId);
+        Account GetAccountByEmailAddress(string emailAddress);
         bool LogOn(string emailAddress, string password);
     }
 }

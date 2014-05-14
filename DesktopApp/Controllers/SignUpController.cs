@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Security;
 using Contexts;
+using DesktopApp.Attributes;
 using DesktopApp.Model;
 using DesktopApp.Model.Mappers;
 using Domain;
@@ -16,21 +17,41 @@ namespace DesktopApp.Controllers
     public class SignUpController : Controller
     {
         private IAccountService _accountService;
+        private ISubscriptionService _subscriptionService;
 
-        public SignUpController(IAccountService accountService)
+        public SignUpController(IAccountService accountService, ISubscriptionService subscriptionService)
         {
             _accountService = accountService;
+            _subscriptionService = subscriptionService;
         }
 
         public SignUpController()
         {
             _accountService = new AccountService();
+            _subscriptionService = new SubscriptionService();
         }
 
         [HttpGet]
         public ActionResult LogOn()
         {
             return View();
+        }
+
+        [HttpGet]
+        public ActionResult SignUp()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult SignUp(Account account)
+        {
+            if (ViewData.ModelState.IsValid)
+            {
+                account.IsAdmin = true;
+                _subscriptionService.CreateSubscription(account);
+            }
+            return RedirectToAction("Index", "Home");
         }
 
         [HttpPost]
@@ -42,6 +63,7 @@ namespace DesktopApp.Controllers
                 if (_accountService.LogOn(account.EmailAddress, account.Password))
                 {
                     FormsAuthentication.SetAuthCookie(account.EmailAddress, false);
+                    Session["Account"] = _accountService.GetAccountByEmailAddress(account.EmailAddress);
                     if (Url.IsLocalUrl(returnUrl) && returnUrl.Length > 1 && returnUrl.StartsWith("/")
                         && !returnUrl.StartsWith("//") && !returnUrl.StartsWith("/\\"))
                     {

@@ -44,7 +44,9 @@
   <ItemGroup>
     <Compile Include="AccountRepository.cs" />
     <Compile Include="Interfaces\IAccountRepository.cs" />
+    <Compile Include="Interfaces\ISubscriptionRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SubscriptionRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Contexts\Contexts.csproj">

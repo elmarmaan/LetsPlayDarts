@@ -64,5 +64,11 @@ namespace Services
             }
             return false;
         }
+
+
+        public Account GetAccountByEmailAddress(string emailAddress)
+        {
+            return _accountRepository.GetAccountByEmailAddress(emailAddress);
+        }
     }
 }

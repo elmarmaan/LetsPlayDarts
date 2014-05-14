@@ -12,9 +12,8 @@ namespace Repositories.Interfaces
         void AddAccount(Account account);
         void DeleteAccount(long accountId);
         Account GetAccount(long accountId);
-        IList<Account> GetAccounts();
+        IEnumerable<Account> GetAccounts();
         void UpdateAccount(Account account, long accountId);
-        void AddPlayerToAccount(long accountId, Player player);
         Account GetAccountByEmailAddress(string emailAddress);
     }
 }

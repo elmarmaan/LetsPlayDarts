@@ -9,6 +9,10 @@ namespace Domain
 {
     public class Account
     {
+        public Account()
+        {
+            IsAdmin = false;
+        }
         public long Id { get; set; }
         [Required]
         public string EmailAddress { get; set; }
@@ -16,7 +20,6 @@ namespace Domain
         public string Password { get; set; }
         [Required]
         public string Name { get; set; }
-
-        public virtual List<Player> Players { get; set; } 
+        public bool IsAdmin { get; set; }
     }
 }

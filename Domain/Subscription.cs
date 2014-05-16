@@ -13,6 +13,6 @@ namespace Domain
             Accounts = new List<Account>();
         }
         public long Id { get; set; }
-        public virtual List<Account> Accounts { get; set; }
+        public virtual ICollection<Account> Accounts { get; set; }
     }
 }

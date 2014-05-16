@@ -21,5 +21,6 @@ namespace Domain
         [Required]
         public string Name { get; set; }
         public bool IsAdmin { get; set; }
+        public virtual Subscription Subscription { get; set; }
     }
 }

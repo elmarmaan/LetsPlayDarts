@@ -29,9 +29,9 @@ namespace Services
             _accountRepository.AddAccount(account);
         }
 
-        public List<Account> GetAccounts()
+        public List<Account> GetAccounts(long subscriptionId)
         {
-            var accounts = _accountRepository.GetAccounts();
+            var accounts = _accountRepository.GetAccounts(subscriptionId);
             return accounts.ToList();
         }
 

@@ -12,7 +12,7 @@ namespace Repositories.Interfaces
         void AddAccount(Account account);
         void DeleteAccount(long accountId);
         Account GetAccount(long accountId);
-        IEnumerable<Account> GetAccounts();
+        IEnumerable<Account> GetAccounts(long subscriptionId);
         void UpdateAccount(Account account, long accountId);
         Account GetAccountByEmailAddress(string emailAddress);
     }

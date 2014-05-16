@@ -11,7 +11,7 @@ namespace DesktopApp.Attributes
             if (filterContext.HttpContext.Session != null)
             {
                 var user = filterContext.HttpContext.Session["Account"] as Account;
-                if (user == null && user.IsAdmin)
+                if (user == null)
                 {
                     filterContext.Result = new RedirectResult("/SignUp/LogOn");
                 }

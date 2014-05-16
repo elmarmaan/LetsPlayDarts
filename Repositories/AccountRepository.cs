@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -42,9 +43,10 @@ namespace Repositories
             return account;
         }
 
-        public IEnumerable<Account> GetAccounts()
+        public IEnumerable<Account> GetAccounts(long subscriptionId)
         {
-            return _context.Accounts.ToList();
+            var subscription = _context.Subscriptions.SingleOrDefault(s => s.Id == subscriptionId);
+            return subscription.Accounts.ToList();
         }
 
         public void UpdateAccount(Account account, long accountId)

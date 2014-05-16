@@ -10,7 +10,7 @@ namespace Services.Interfaces
     public interface IAccountService
     {
         void AddAccount(Account account);
-        List<Account> GetAccounts();
+        List<Account> GetAccounts(long subscriptionId);
         Account GetAccount(long accountId);
         void EditAccount(Account account);
         void DeleteAccount(long accountId);

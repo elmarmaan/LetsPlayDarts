@@ -63,7 +63,8 @@ namespace DesktopApp.Controllers
                 if (_accountService.LogOn(account.EmailAddress, account.Password))
                 {
                     FormsAuthentication.SetAuthCookie(account.EmailAddress, false);
-                    Session["Account"] = _accountService.GetAccountByEmailAddress(account.EmailAddress);
+                    var sessionAccount = _accountService.GetAccountByEmailAddress(account.EmailAddress);
+                    Session["Account"] = sessionAccount;
                     if (Url.IsLocalUrl(returnUrl) && returnUrl.Length > 1 && returnUrl.StartsWith("/")
                         && !returnUrl.StartsWith("//") && !returnUrl.StartsWith("/\\"))
                     {

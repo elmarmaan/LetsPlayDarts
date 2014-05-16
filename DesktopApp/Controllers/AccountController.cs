@@ -42,11 +42,11 @@ namespace DesktopApp.Controllers
             return RedirectToAction("GetAccounts");
         }
 
-        [Authorize]
+        [IsAdmin]
         public ActionResult GetAccounts()
         {
-            var accounts = _accountService.GetAccounts();
-            ViewData.Model = accounts;
+            var account = Session["Account"] as Account;
+            ViewData.Model = account.Subscription.Accounts;
             return View();
         }
 

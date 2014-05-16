@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Web.Mvc;
 using Domain;
+using Services;
 
 namespace DesktopApp.Attributes
 {
@@ -10,12 +11,13 @@ namespace DesktopApp.Attributes
         {
             if (filterContext.HttpContext.Session != null)
             {
-                var user = filterContext.HttpContext.Session["Account"] as Account;
-                if (user == null)
+                var accountService = new AccountService();
+                var account = accountService.GetAccountByEmailAddress(System.Web.HttpContext.Current.User.Identity.Name);
+                if (account == null)
                 {
                     filterContext.Result = new RedirectResult("/SignUp/LogOn");
                 }
-                else if(user.IsAdmin)
+                else if(account.IsAdmin)
                 {
                     
                 }

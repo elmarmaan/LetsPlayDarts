@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Remoting.Contexts;
 using System.Web;
 using System.Web.Mvc;
 using DesktopApp.Attributes;
@@ -10,20 +11,8 @@ using Services.Interfaces;
 
 namespace DesktopApp.Controllers
 {
-    public class AccountController : Controller
+    public class AccountController : LetsPlayDartsControllerController
     {
-        private IAccountService _accountService;
-
-        public AccountController(IAccountService accountService)
-        {
-            _accountService = accountService;
-        }
-
-        public AccountController()
-        {
-            _accountService = new AccountService();
-        }
-
         [HttpGet]
         [IsAdmin]
         public ActionResult AddAccount()
@@ -37,6 +26,7 @@ namespace DesktopApp.Controllers
         {
             if (ViewData.ModelState.IsValid)
             {
+                account.Subscription = Subscription;
                 _accountService.AddAccount(account);
             }
             return RedirectToAction("GetAccounts");
@@ -45,14 +35,17 @@ namespace DesktopApp.Controllers
         [IsAdmin]
         public ActionResult GetAccounts()
         {
-            var account = Session["Account"] as Account;
-            ViewData.Model = account.Subscription.Accounts;
+            ViewData.Model = Subscription.Accounts;
             return View();
         }
 
         [HttpGet]
         public ActionResult EditAccount(long accountId)
         {
+            if (accountId == 0)
+            {
+                accountId = _accountService.GetAccountByEmailAddress(System.Web.HttpContext.Current.User.Identity.Name).Id;
+            }
             var account = _accountService.GetAccount(accountId);
             ViewData.Model = account;
             return View();
@@ -65,12 +58,14 @@ namespace DesktopApp.Controllers
             return RedirectToAction("GetAccounts");
         }
 
+        [IsAdmin]
         public ActionResult DeleteAccount(long accountId)
         {
             _accountService.DeleteAccount(accountId);
             return RedirectToAction("GetAccounts");
         }
 
+        [Authorize]
         public ActionResult GetAccount(long accountId)
         {
             var account = _accountService.GetAccount(accountId);

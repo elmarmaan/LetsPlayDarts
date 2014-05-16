@@ -30,7 +30,13 @@
                 else
                 {
                     <ul class="nav nav-pills pull-right">
-                        <li><a href="/SignUp/SignOut">Sign out</a></li>
+                        <li class="user_info">
+                            <span>Logged in as </span>
+                            <a href="/Account/EditAccount/?accountId=0">@HttpContext.Current.User.Identity.Name</a>
+                        </li>
+                        <li class="sign_out">
+                            <a href="/SignUp/SignOut">Sign out</a>
+                        </li>
                     </ul>
                 }
                

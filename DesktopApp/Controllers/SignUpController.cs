@@ -63,8 +63,6 @@ namespace DesktopApp.Controllers
                 if (_accountService.LogOn(account.EmailAddress, account.Password))
                 {
                     FormsAuthentication.SetAuthCookie(account.EmailAddress, false);
-                    var sessionAccount = _accountService.GetAccountByEmailAddress(account.EmailAddress);
-                    Session["Account"] = sessionAccount;
                     if (Url.IsLocalUrl(returnUrl) && returnUrl.Length > 1 && returnUrl.StartsWith("/")
                         && !returnUrl.StartsWith("//") && !returnUrl.StartsWith("/\\"))
                     {
@@ -86,7 +84,7 @@ namespace DesktopApp.Controllers
         public ActionResult SignOut()
         {
             FormsAuthentication.SignOut();
-
+            Session.Clear();
             return RedirectToAction("Index", "Home");
         }
     }

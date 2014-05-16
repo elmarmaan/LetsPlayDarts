@@ -9,6 +9,39 @@
 .nav-pills>li>a {
     margin-top: 5px;
 }
+.nav li {
+    margin-left: 10px;
+}
+.nav .user_info {
+    margin-top: 10px;
+}
+.nav .user_info span {
+    color: #999;
+    float: left;
+    margin-right: 10px;
+    margin-top: 5px;
+}
+.nav .user_info a {
+    float: right;
+    padding: 0;
+}
+.nav .user_info a:hover {
+    padding: 0;
+    background: none;
+}
+
+.nav .sign_out a {
+    margin-top: 15px;
+    padding: 0;
+    background: none;
+    margin-left: 10px;
+}
+.nav .sign_out a:hover {
+    margin-top: 15px;
+    padding: 0;
+    background: none;
+    margin-left: 10px;
+}
 
 @media (min-width: 768px) {
     .menubar {

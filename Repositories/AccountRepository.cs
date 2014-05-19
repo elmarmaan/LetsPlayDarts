@@ -11,20 +11,9 @@ using Repositories.Interfaces;
 
 namespace Repositories
 {
-    public class AccountRepository : IAccountRepository
+    public class AccountRepository : RepositoryBase, IAccountRepository
     {
-        private LetsPlayDartsContext _context ;
-        public AccountRepository(LetsPlayDartsContext letsPlayDartsContext)
-        {
-            _context = letsPlayDartsContext;
-        }
-
-        public AccountRepository()
-        {
-            _context = new LetsPlayDartsContext();
-        }
-
-        public void AddAccount(Account account)
+       public void AddAccount(Account account)
         {
             _context.Accounts.Add(account);
             _context.SaveChanges();

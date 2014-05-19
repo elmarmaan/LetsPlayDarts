@@ -9,14 +9,8 @@ using Repositories.Interfaces;
 
 namespace Repositories
 {
-    public class SubscriptionRepository : ISubscriptionRepository
+    public class SubscriptionRepository : RepositoryBase, ISubscriptionRepository
     {
-        private LetsPlayDartsContext _context ;
-        public SubscriptionRepository(LetsPlayDartsContext letsPlayDartsContext)
-        {
-            _context = letsPlayDartsContext;
-        }
-
         public SubscriptionRepository()
         {
             _context = new LetsPlayDartsContext();

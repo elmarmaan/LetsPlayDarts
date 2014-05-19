@@ -13,6 +13,7 @@ namespace Contexts
     {
         public DbSet<Subscription> Subscriptions { get; set; }
         public DbSet<Account> Accounts { get; set; }
+        public DbSet<GameType> GameTypes { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

@@ -1,3 +1,5 @@
+using Domain;
+
 namespace Contexts.Migrations
 {
     using System;
@@ -15,20 +17,21 @@ namespace Contexts.Migrations
             ContextKey = "LetsPlayDartsContext";
         }
 
-        protected override void Seed(Contexts.LetsPlayDartsContext context)
+        protected override void Seed(LetsPlayDartsContext context)
         {
             //  This method will be called after migrating to the latest version.
 
             //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
             //  to avoid creating duplicate seed data. E.g.
             //
-            //    context.People.AddOrUpdate(
-            //      p => p.FullName,
-            //      new Person { FullName = "Andrew Peters" },
-            //      new Person { FullName = "Brice Lambson" },
-            //      new Person { FullName = "Rowan Miller" }
-            //    );
-            //
+            context.GameTypes.AddOrUpdate(
+              g => g.Name,
+              new GameType { Name = "Tac tics" },
+              new GameType { Name = "501" },
+              new GameType { Name = "Twenty and below" },
+              new GameType { Name = "301" }
+            );
+            
         }
     }
 }

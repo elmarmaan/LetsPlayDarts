@@ -10,27 +10,27 @@
 @using (Html.BeginForm())
 {
     <label for="gametype">Game type:</label>
-    <select name="gametype">
+    <select name="gameType">
         @foreach (var gameType in Model.GameTypes)
         {
-            <option>@gameType.Name</option>
+            <option value="@gameType.Id">@gameType.Name</option>
         }
     </select>
     
     <label for="player1">Player 1:</label>
-    <select name="player1">
+    <select name="playerOne">
         @foreach (var player in Model.Accounts)
         {
-            <option>@player.Name</option>
+            <option value="@player.Id">@player.Name</option>
         }
     </select>
     
     <label for="player2">Player 2:</label>
-    <select name="player2">
+    <select name="playerTwo">
         @foreach (var player in
             Model.Accounts)
         {
-            <option>@player.Name</option>
+            <option value="@player.Id">@player.Name</option>
         }
     </select>
 

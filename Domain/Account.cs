@@ -22,5 +22,6 @@ namespace Domain
         public string Name { get; set; }
         public bool IsAdmin { get; set; }
         public virtual Subscription Subscription { get; set; }
+        public virtual ICollection<Game> Games { get; set; }
     }
 }

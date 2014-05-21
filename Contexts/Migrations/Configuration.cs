@@ -1,4 +1,5 @@
 using Domain;
+using Domain.Enums;
 
 namespace Contexts.Migrations
 {
@@ -26,10 +27,10 @@ namespace Contexts.Migrations
             //
             context.GameTypes.AddOrUpdate(
               g => g.Name,
-              new GameType { Name = "Tac tics" },
-              new GameType { Name = "501" },
-              new GameType { Name = "Twenty and below" },
-              new GameType { Name = "301" }
+              new GameType { Name = "Tac tics" ,Type = GameTypeTypes.TacTics},
+              new GameType { Name = "501", Type = GameTypeTypes.FiveHundredAndOne},
+              new GameType { Name = "Twenty and below", Type = GameTypeTypes.TwentyAndBelow},
+              new GameType { Name = "301", Type = GameTypeTypes.ThreeHundredAndOne}
             );
             
         }

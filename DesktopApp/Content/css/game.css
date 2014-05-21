@@ -1,0 +1,62 @@
+﻿.scoreboard {
+    margin-left: auto;
+    margin-right: auto;
+    width: 650px;
+}
+
+.scoreboard .player_column {
+    width: 325px;
+    font-family: 'BrushScript BT', cursive;
+    text-align: center;
+    border-right: 2px black solid;
+    border-left: 2px black solid;
+    border-top: 2px black solid;
+}
+
+.scoreboard .player_one {
+    float: left;
+}
+.scoreboard .player_two {
+    float: right;
+}
+
+.scoreboard .player_column .name {
+    font-size: 28px;
+}
+
+.scoreboard .middle {
+    width: 80px;
+    float: left;
+}
+.scoreboard .middle div {
+    width: 80px;
+    height: 40px;
+    float: left;
+    text-align: center;
+    border-left: 2px black solid;
+    border-right: 2px black solid;
+    border-bottom: 2px black solid;
+    font-size: 27px;
+}
+
+.scoreboard .score_column {
+    width: 285px;
+    border-top: 2px black solid;
+    border-bottom: 2px black solid;
+}
+
+.scoreboard .player_one_score {
+    float: left;
+    border-left: 2px black solid;
+
+}
+.scoreboard .player_two_score {
+    float: right;
+    border-right: 2px black solid;
+}
+
+.scoreboard .player_one_score div,
+.scoreboard .player_two_score div {
+    min-width: 260px;
+    height: 40px;
+}

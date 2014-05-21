@@ -138,6 +138,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Content Include="Content\css\application.css" />
+    <Content Include="Content\css\game.css" />
     <Content Include="Global.asax" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -154,6 +155,7 @@
     <Content Include="Views\SignUp\LogOn.cshtml" />
     <Content Include="Views\SignUp\SignUp.cshtml" />
     <Content Include="Views\Game\StartQuickGame.cshtml" />
+    <Content Include="Views\Game\TacTics.cshtml" />
     <None Include="_bin_deployableAssemblies\x86\sqlcese40.dll" />
     <None Include="_bin_deployableAssemblies\x86\sqlceqp40.dll" />
     <None Include="_bin_deployableAssemblies\x86\sqlceme40.dll" />

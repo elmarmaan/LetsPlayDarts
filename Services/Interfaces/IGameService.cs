@@ -5,11 +5,13 @@ using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using Domain;
+using Domain.Enums;
 
 namespace Services.Interfaces
 {
     public interface IGameService
     {
         IList<GameType> GetGameTypes();
+        void StartMatch(long gameTypeId, long playerOneId, long playerTwoId);
     }
 }

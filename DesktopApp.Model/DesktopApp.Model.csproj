@@ -41,10 +41,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AccountModel.cs" />
+    <Compile Include="GameModel.cs" />
     <Compile Include="GameTypeModel.cs" />
     <Compile Include="LoginModel.cs" />
     <Compile Include="Mappers\DomainToModelMapper.cs" />
     <Compile Include="Mappers\ModelToDomainMapper.cs" />
+    <Compile Include="PlayerModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StartQuickGameModel.cs" />
   </ItemGroup>

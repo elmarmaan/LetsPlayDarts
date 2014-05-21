@@ -22,8 +22,34 @@ namespace DesktopApp.Model.Mappers
             return source.Select(gameType => new GameTypeModel
             {
                 Id = gameType.Id,
-                Name = gameType.Name
+                Name = gameType.Name,
+                Type = gameType.Type
             }).ToList();
+        }
+
+        public static GameModel Map(GameType gameType, Account playerOne, Account playerTwo)
+        {
+            return new GameModel
+            {
+                GameType = new GameTypeModel
+                {
+                    Id = gameType.Id,
+                    Name = gameType.Name,
+                    Type = gameType.Type
+                },
+                PlayerOne = new PlayerModel
+                {
+                    Id = playerOne.Id,
+                    EmailAddress = playerOne.EmailAddress,
+                    Name = playerOne.Name
+                },
+                PlayerTwo = new PlayerModel
+                {
+                    Id = playerTwo.Id,
+                    EmailAddress = playerTwo.EmailAddress,
+                    Name = playerTwo.Name
+                }
+            };
         }
     }
 }

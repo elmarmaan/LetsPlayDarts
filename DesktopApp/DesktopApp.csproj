@@ -139,6 +139,7 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Content Include="Content\css\application.css" />
     <Content Include="Content\css\game.css" />
+    <Content Include="Content\images\dart-icon.png" />
     <Content Include="Global.asax" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">

@@ -5,7 +5,42 @@
     Layout = "~/Views/_Layout.cshtml";
 }
 
+@section JavaScript
+{
+    <script type="text/javascript" src="@Url.Content("/Scripts/tactics.js")"></script>
+}
+
 <h2>TacTics</h2>
+
+<table class="score_input">
+    <tr>
+        <td><span>T</span></td>
+        <td><span>D</span></td>
+        <td><span>S</span></td>
+    </tr>
+    @{
+        var count = 7;
+        var score = 20;
+    }
+    @for(var i = 0; i< count; i++)
+    {
+        <tr>
+            <td><span>@score</span></td>
+            @{ score--; }
+            <td><span>@score</span></td>
+            @{ score--; }
+            @if (score == 0)
+            {
+                <td><span>B</span></td>
+            }
+            else
+            {
+                <td><span>@score</span></td>
+                score--;
+            }
+        </tr>
+    }
+</table>
 
 <table class="scoreboard">
     <tr class="player_name">

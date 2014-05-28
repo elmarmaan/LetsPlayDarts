@@ -180,7 +180,7 @@ function checkForWinner() {
                 winner = false;
             }
         });
-        if (winner && _playerOneScores.penalty !== 0) {
+        if (winner && (_playerOneScores.penalty - _playerTwoScores.penalty) > 0) {
             winner = false;
         }
 
@@ -190,7 +190,7 @@ function checkForWinner() {
                 winner = false;
             }
         });
-        if (winner && _playerOneScores.penalty !== 0) {
+        if (winner && (_playerTwoScores.penalty - _playerOneScores.penalty) > 0) {
             winner = false;
         }
     }

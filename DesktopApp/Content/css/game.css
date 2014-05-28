@@ -18,17 +18,16 @@
     background-position: 10px 10px;
 }
 
-.scoreboard .player_one_points,
-.scoreboard .player_one_stripes,
-.scoreboard .player_two_points,
-.scoreboard .player_two_stripes {
-    width: 22%
-
+.scoreboard tr td {
+    width: 22%;
+    border-right: 1px black solid; 
 }
 
-.scoreboard .player_one_points,
-.scoreboard .player_two_points {
-    border-right: 1px black solid; 
+.scoreboard .player_one_penalty,
+.scoreboard .player_two_penalty,
+.scoreboard .player_one_stripes,
+.scoreboard .player_two_stripes {
+    font-size: 22px;
 }
 
 .scoreboard .middle {
@@ -36,6 +35,10 @@
     width: 12%;
     height: 50px;
     font-size: 22px;
+}
+
+.scoreboard .done {
+    text-decoration: line-through;
 }
 
 .score_input {
@@ -53,4 +56,8 @@
     background-color: blue;
     border-radius: 4px;
     color: white;
+}
+
+.score_input tr:first-child {
+    height: 50px;
 }

@@ -11,126 +11,148 @@
 }
 
 <h2>TacTics</h2>
-
-<table class="score_input">
-    <tr>
-        <td><span>T</span></td>
-        <td><span>D</span></td>
-        <td><span>S</span></td>
-    </tr>
-    @{
-        var count = 7;
-        var score = 20;
-    }
-    @for(var i = 0; i< count; i++)
-    {
+<div class="left_column">
+    <table class="score_input">
         <tr>
-            <td><span>@score</span></td>
-            @{ score--; }
-            <td><span>@score</span></td>
-            @{ score--; }
-            @if (score == 0)
-            {
-                <td><span>B</span></td>
-            }
-            else
-            {
-                <td><span>@score</span></td>
-                score--;
-            }
+            <td><span>T</span></td>
+            <td><span>D</span></td>
+            <td><span>S</span></td>
         </tr>
-    }
-</table>
+        @{
+            var count = 7;
+            var score = 20;
+        }
+        @for (var i = 0; i < count; i++)
+        {
+            <tr>
+                <td><span>@score</span></td>
+                @{ score--; }
+                <td><span>@score</span></td>
+                @{ score--; }
+                @if (score == 0)
+                {
+                    <td><span>B</span></td>
+                }
+                else
+                {
+                    <td><span>@score</span></td>
+                    score--;
+                }
+            </tr>
+        }
+    </table>
+    <div>
+        <span>Darts: </span>
+        <span class="number_of_darts">0</span>
+    </div>
+</div>
 
-<table class="scoreboard">
-    <tr class="player_name">
-        <td class="turn">@Model.PlayerOne.Name</td>
-        <td>@Model.PlayerTwo.Name</td>
-    </tr>
-</table>
-<table class="scoreboard">
-    <tr class="twenty">
-        <td class="player_one_penalty"></td>
-        <td class="player_one_stripes"></td>
-        <td class="middle">20</td>
-        <td class="player_two_stripes"></td>
-        <td class="player_two_penalty"></td>
-    </tr>
-    <tr class="twenty">
-        <td></td>
-        <td class="player_one_stripes"></td>
-        <td class="middle">19</td>
-        <td class="player_two_stripes"></td>
-        <td></td>
-    </tr>
-    <tr class="twenty">
-        <td></td>
-        <td class="player_one_stripes"></td>
-        <td class="middle">18</td>
-        <td class="player_two_stripes"></td>
-        <td></td>
-    </tr>
-    <tr class="twenty">
-        <td></td>
-        <td class="player_one_stripes"></td>
-        <td class="middle">17</td>
-        <td class="player_two_stripes"></td>
-        <td></td>
-    </tr>
-    <tr class="twenty">
-        <td></td>
-        <td class="player_one_stripes"></td>
-        <td class="middle">16</td>
-        <td class="player_two_stripes"></td>
-        <td></td>
-    </tr>
-    <tr class="twenty">
-        <td></td>
-        <td class="player_one_stripes"></td>
-        <td class="middle">15</td>
-        <td class="player_two_stripes"></td>
-        <td></td>
-    </tr>
-    <tr class="twenty">
-        <td></td>
-        <td class="player_one_stripes"></td>
-        <td class="middle">14</td>
-        <td class="player_two_stripes"></td>
-        <td></td>
-    </tr>
-    <tr class="twenty">
-        <td></td>
-        <td class="player_one_stripes"></td>
-        <td class="middle">13</td>
-        <td class="player_two_stripes"></td>
-        <td></td>
-    </tr>
-    <tr class="twenty">
-        <td></td>
-        <td class="player_one_stripes"></td>
-        <td class="middle">12</td>
-        <td class="player_two_stripes"></td>
-        <td></td>
-    </tr>
-    <tr class="twenty">
-        <td></td>
-        <td class="player_one_stripes"></td>
-        <td class="middle">11</td>
-        <td class="player_two_stripes"></td>
-        <td></td>
-    </tr>
-    <tr class="twenty">
-        <td></td>
-        <td class="player_one_stripes"></td>
-        <td class="middle">10</td>
-        <td class="player_two_stripes"></td>
-        <td></td>
-    </tr>
-    <tr class="twenty">
-        <td></td>
-        <td class="player_one_stripes"></td>
-        <td class="middle">B</td>
-        <td class="player_two_stripes"></td>
-        <td></td>
-    </tr>
-</table>
+<div class="middle_column">
+    <table class="scoreboard">
+        <tr class="player_name">
+            <td class="turn">@Model.PlayerOne.Name</td>
+            <td>@Model.PlayerTwo.Name</td>
+        </tr>
+    </table>
+    <table class="scoreboard">
+        <tr class="twenty">
+            <td class="player_one_penalty"></td>
+            <td class="player_one_stripes"></td>
+            <td class="middle">20</td>
+            <td class="player_two_stripes"></td>
+            <td class="player_two_penalty"></td>
+        </tr>
+        <tr class="twenty">
+            <td></td>
+            <td class="player_one_stripes"></td>
+            <td class="middle">19</td>
+            <td class="player_two_stripes"></td>
+            <td></td>
+        </tr>
+        <tr class="twenty">
+            <td></td>
+            <td class="player_one_stripes"></td>
+            <td class="middle">18</td>
+            <td class="player_two_stripes"></td>
+            <td></td>
+        </tr>
+        <tr class="twenty">
+            <td></td>
+            <td class="player_one_stripes"></td>
+            <td class="middle">17</td>
+            <td class="player_two_stripes"></td>
+            <td></td>
+        </tr>
+        <tr class="twenty">
+            <td></td>
+            <td class="player_one_stripes"></td>
+            <td class="middle">16</td>
+            <td class="player_two_stripes"></td>
+            <td></td>
+        </tr>
+        <tr class="twenty">
+            <td></td>
+            <td class="player_one_stripes"></td>
+            <td class="middle">15</td>
+            <td class="player_two_stripes"></td>
+            <td></td>
+        </tr>
+        <tr class="twenty">
+            <td></td>
+            <td class="player_one_stripes"></td>
+            <td class="middle">14</td>
+            <td class="player_two_stripes"></td>
+            <td></td>
+        </tr>
+        <tr class="twenty">
+            <td></td>
+            <td class="player_one_stripes"></td>
+            <td class="middle">13</td>
+            <td class="player_two_stripes"></td>
+            <td></td>
+        </tr>
+        <tr class="twenty">
+            <td></td>
+            <td class="player_one_stripes"></td>
+            <td class="middle">12</td>
+            <td class="player_two_stripes"></td>
+            <td></td>
+        </tr>
+        <tr class="twenty">
+            <td></td>
+            <td class="player_one_stripes"></td>
+            <td class="middle">11</td>
+            <td class="player_two_stripes"></td>
+            <td></td>
+        </tr>
+        <tr class="twenty">
+            <td></td>
+            <td class="player_one_stripes"></td>
+            <td class="middle">10</td>
+            <td class="player_two_stripes"></td>
+            <td></td>
+        </tr>
+        <tr class="twenty">
+            <td></td>
+            <td class="player_one_stripes"></td>
+            <td class="middle">B</td>
+            <td class="player_two_stripes"></td>
+            <td></td>
+        </tr>
+    </table>
+</div>
+
+<div class="right_column">
+    <div class="player_one">
+        <div class="header">@Model.PlayerOne.Name</div>
+        <table>
+            <tr>
+                <td>Three dart avg.</td>
+                <td></td>
+            </tr>
+        </table>
+    </div>
+    <div class="player_two">
+        <div class="header">@Model.PlayerTwo.Name</div>
+    </div>
+</div>

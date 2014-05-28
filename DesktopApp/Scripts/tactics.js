@@ -153,6 +153,8 @@ function displayScores() {
 
     if (_selected) {
         _arrowsThrown++;
+        $('.number_of_darts').text(_arrowsThrown);
+        
         checkForWinner();
         if (_arrowsThrown === 3) {
             changeTurn();

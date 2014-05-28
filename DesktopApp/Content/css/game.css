@@ -1,8 +1,11 @@
-﻿.scoreboard {
+﻿.left_column {
+    float: left;
+}
+
+.scoreboard {
     width: 650px;
     border: 1px black solid;
     text-align: center;
-    float: left;
 }
 
 .scoreboard .player_name td {
@@ -42,9 +45,8 @@
 }
 
 .score_input {
-    float: left;
     width: 200px;
-    text-align: center;
+    text-align: left;
     font-size: 20px;
 }
 
@@ -60,4 +62,19 @@
 
 .score_input tr:first-child {
     height: 50px;
+}
+
+.right_column {
+    float: right;
+    width: 260px;
+}
+
+.right_column .header {
+    text-align: center;
+    background-color: black;
+    color: white;
+}
+
+.middle_column {
+    float: left;
 }

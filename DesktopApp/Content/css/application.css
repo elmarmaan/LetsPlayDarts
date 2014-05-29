@@ -1,9 +1,17 @@
-﻿.menubar {
+﻿body {
+    background-color: #017F3E; 
+}
+
+.menubar {
     margin-top: 80px;
     margin-left: auto;
     margin-right: auto;
     padding-left: 15px;
     padding-right: 15px;
+}
+
+.all_content {
+    margin-top: 50px;
 }
 
 .nav-pills>li>a {

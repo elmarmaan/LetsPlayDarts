@@ -149,6 +149,7 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Content Include="Content\css\application.css" />
     <Content Include="Content\css\game.css" />
+    <Content Include="Content\css\login-signup.css" />
     <Content Include="Content\images\dart-icon.png" />
     <Content Include="Global.asax" />
     <Content Include="Scripts\jquery\jquery-1.11.1.min.js" />

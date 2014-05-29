@@ -1,0 +1,92 @@
+﻿.login,
+.signup {
+    width: 400px ;
+    margin-left: auto ;
+    margin-right: auto ;
+    border-radius: 10px;
+    background-color: #BCBCBC;
+    margin-top: 50px;
+    border: black 1px solid;
+}
+
+.login .header,
+.signup .header {
+    text-align: center;
+    padding: 5px;
+}
+
+.login .login_form .editor-label,
+.signup .signup_form .editor-label {
+    width: 28%;
+    display: inline-block;
+}
+
+.login .login_form,
+.signup .signup_form {
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 10px;
+}
+
+.login .login_form input[type="password"],
+.login .login_form input[type="email"],
+.signup .signup_form input[type="password"],
+.signup .signup_form input[type="text"]
+ {
+    width: 70%;
+    padding: 5px 5px 5px 5px;
+    border-radius: 7px;
+    border: #CCC 1px solid;
+}
+
+.login .login_form .editor,
+.signup .signup_form .editor {
+    margin-top: 10px;
+}
+
+.button.primary {
+	-moz-box-shadow:inset 0px 1px 0px 0px #ffffff;
+	-webkit-box-shadow:inset 0px 1px 0px 0px #ffffff;
+	box-shadow:inset 0px 1px 0px 0px #ffffff;
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #ededed), color-stop(1, #dfdfdf) );
+	background:-moz-linear-gradient( center top, #ededed 5%, #dfdfdf 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ededed', endColorstr='#dfdfdf');
+	background-color:#ededed;
+	-webkit-border-top-left-radius:6px;
+	-moz-border-radius-topleft:6px;
+	border-top-left-radius:6px;
+	-webkit-border-top-right-radius:6px;
+	-moz-border-radius-topright:6px;
+	border-top-right-radius:6px;
+	-webkit-border-bottom-right-radius:6px;
+	-moz-border-radius-bottomright:6px;
+	border-bottom-right-radius:6px;
+	-webkit-border-bottom-left-radius:6px;
+	-moz-border-radius-bottomleft:6px;
+	border-bottom-left-radius:6px;
+	text-indent:0;
+	border:1px solid #dcdcdc;
+	display:inline-block;
+	color:#777777;
+	font-family:arial;
+	font-size:15px;
+	font-weight:bold;
+	font-style:normal;
+	height:40px;
+	line-height:40px;
+	width:100px;
+	text-decoration:none;
+	text-align:center;
+	text-shadow:1px 1px 0px #ffffff;
+    float: right;
+    margin: 10px 0 20px;
+}
+.button.primary:hover {
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #dfdfdf), color-stop(1, #ededed) );
+	background:-moz-linear-gradient( center top, #dfdfdf 5%, #ededed 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#dfdfdf', endColorstr='#ededed');
+	background-color:#dfdfdf;
+}.button.primary:active {
+	position:relative;
+	top:1px;
+}

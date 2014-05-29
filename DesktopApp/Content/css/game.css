@@ -69,12 +69,24 @@
     width: 260px;
 }
 
+.right_column table {
+    width: 100%;
+}
+
 .right_column .header {
     text-align: center;
     background-color: black;
     color: white;
 }
+.right_column table tr td {
+    width: 50%;
+}
+.right_column table tr .right {
+    text-align: right;
+    margin-right: 10px
+}
 
 .middle_column {
     float: left;
+    background-color: white;
 }

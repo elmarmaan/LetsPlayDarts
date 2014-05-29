@@ -18,7 +18,12 @@ var _playerOneScores = {
         { score: 10, stripes: 0 },
         { score: 'B', stripes: 0 }
     ],
-    penalty: 0
+    penalty: 0,
+    threeDartAverage: 0,
+    triples: 0,
+    doubles: 0,
+    singles: 0,
+    best: 0
 };
 
 var _playerTwoScores = {
@@ -36,7 +41,12 @@ var _playerTwoScores = {
         { score: 10, stripes: 0 },
         { score: 'B', stripes: 0 }
     ],
-    penalty: 0
+    penalty: 0,
+    threeDartAverage: 0,
+    triples: 0,
+    doubles: 0,
+    singles: 0,
+    best: 0
 };
 
 window.onload = function() {
@@ -62,11 +72,14 @@ window.onload = function() {
 
 
 function setScore(scoreType, score) {
+    setStatistics(scoreType);
+
     if (_turn === 0) {
         setScoreForPlayer(scoreType, score, _playerOneScores, _playerTwoScores);
     } else {
         setScoreForPlayer(scoreType, score, _playerTwoScores, _playerOneScores);
     }
+
     _scoreType = null;
 }
 
@@ -201,4 +214,50 @@ function checkForWinner() {
         var name = $('.player_name .turn').text();
         alert(name + ' has won the match');
     }
+}
+
+setStatistics = function(scoreType) {
+    if (_turn === 0) {
+        switch (scoreType) {
+            case 1:
+                _playerOneScores.singles++;
+                break;
+            case 2:
+                _playerOneScores.doubles++;
+                break;
+            case 3:
+                _playerOneScores.triples++;
+                break;
+            default:
+                //do nothing
+        }
+    } else {
+        switch (scoreType) {
+            case 1:
+                _playerTwoScores.singles++;
+                break;
+            case 2:
+                _playerTwoScores.doubles++;
+                break;
+            case 3:
+                _playerTwoScores.triples++;
+                break;
+            default:
+                //do nothing
+        }
+    }
+
+    displayStatistics();
+}
+
+displayStatistics = function () {
+    //player 1
+    $('.player_one .triples').text(_playerOneScores.triples);
+    $('.player_one .doubles').text(_playerOneScores.doubles);
+    $('.player_one .singles').text(_playerOneScores.singles);
+
+    //player 2
+    $('.player_two .triples').text(_playerTwoScores.triples);
+    $('.player_two .doubles').text(_playerTwoScores.doubles);
+    $('.player_two .singles').text(_playerTwoScores.singles);
 }
